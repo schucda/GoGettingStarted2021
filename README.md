@@ -17,13 +17,50 @@ This project was based on the training I completed from the [Pluralsight Go: Get
 * Postman is a great applicaiton for interacting with the WEB API.
 
 **Get**
+Gets users from the struct
 
 A Get to http://localhost:3000/users will return all users that have been added to the struct
 A Get to http://localhost:3000/users/1 will return the first user
 A Get to http://localhost:3000/users/2 will return the second user and so on.
 
 **Post**
+Adds users to the struct
+
 {
-  "FirstName":"[Firstname]
+  "FirstName":"[First name]",
+  "LastName":"[last name]",
+  "PhoneNumber":"[phone number]",
+  "ZipCode":"[zip code]"
+}
+
+**Put**
+Updates users in the struct
+
+When doing this, you must **put** to the appropriate URL, for example, if I want to update the 3rd user, I must go to https://localhost:3000/users/3
+The **put** must be structured as follows:
+
+{
+  "ID":[number]
+  "FirstName":"[First name]",
+  "LastName":"[last name]",
+  "PhoneNumber":"[phone number]",
+  "ZipCode":"[zip code]"
+}
+
+if a field is left blank or the ID doesn't match the URL path it will fail.
+
+**Delete**
+Delete a user from the application
+
+Issue the delete to the appropriate URL https://localhost:3000/users/3
+
+{
+  "ID":3
+}
+
+This will delete the user at 3
+
+
+
 
 
